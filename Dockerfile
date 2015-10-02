@@ -4,7 +4,9 @@ FROM phusion/baseimage:0.9.17
 CMD ["/sbin/my_init"]
 
 # ...put your own build instructions here...
-RUN apt-get -y update && apt-get install -y curl wget bzip2
+RUN apt-get -y update && \
+    apt-get install -y curl wget bzip2 nano
+
 RUN curl -L -O http://downloads.sourceforge.net/project/cgatools/1.8.0/cgatools-1.8.0.1-linux_binary-x86_64.tar.gz &&\
    tar -xzf cgatools-1.8.0.1-linux_binary-x86_64.tar.gz &&\
    cp cgatools-1.8.0.1-linux_binary-x86_64/bin/cgatools /usr/local/bin/cgatools
